@@ -2,11 +2,19 @@ name: cache repo-report openssf score daily
 
 on:
   schedule:
-    - cron: "0 0 * * *"
+    - cron: "*/5 * * * *"
+  push:
+    branches:
+      - 'actions'
 
 jobs:
-  steps:
+  openssf:
+    runs-on: macos-latest
+    env:
+      CI: false
+    steps:
       - uses: actions/checkout@v2
-      - uses: Riyabelle25/repo-report-cache@main
+      - run: brew install scorecard && npm ci 
+      - uses: ./
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
