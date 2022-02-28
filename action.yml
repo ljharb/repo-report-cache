@@ -1,0 +1,11 @@
+name: 'OpenSSF score Repo-Report'
+description: 'checks openssf score of each repo fetched by repo-report'
+
+inputs:
+  token:
+    description: 'The token to use to access the GitHub API'
+    required: true
+    
+runs:
+  using: 'node16'
+  main: './index.js'
