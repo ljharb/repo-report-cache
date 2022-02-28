@@ -2,10 +2,15 @@ name: cache repo-report openssf score daily
 
 on:
   schedule:
-    - cron: "0 0 * * *"
+    - cron: "*/5 * * * *"
+  push:
+    branches:
+      - 'actions'
 
 jobs:
-  steps:
+  openssf:
+    runs-on: ubuntu-latest
+    steps:
       - uses: actions/checkout@v2
       - uses: Riyabelle25/repo-report-cache@main
         with:

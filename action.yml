@@ -5,6 +5,11 @@ inputs:
   token:
     description: 'The token to use to access the GitHub API'
     required: true
+jobs:
+  code-setup:
+    runs-on: ubuntu-latest
+    steps:
+      - runs: npm install
     
 runs:
   using: 'node16'
