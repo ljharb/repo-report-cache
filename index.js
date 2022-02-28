@@ -7,10 +7,10 @@ require('dotenv').config();
 
 const main = async () => {
 	try {
-		// const token = core.getInput('token', { required: true });   //to be used when introducing GH Action YAML
+		const token = core.getInput('token', { required: true });   //to be used when introducing GH Action YAML
 		// eslint-disable-next-line no-undef
-		const {GH_TOKEN} = process.env;
-		const token = GH_TOKEN;
+		// const {GH_TOKEN} = process.env;
+		// const token = GH_TOKEN;
         
 		const getRepos = execSync(`npx repo-report ls --token ${token}`, {encoding: 'utf-8'});
 		const repositories = getRepos.substring(0,getRepos.length-1).split('\n');
