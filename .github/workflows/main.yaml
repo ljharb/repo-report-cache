@@ -9,12 +9,12 @@ on:
 
 jobs:
   openssf:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     env:
       CI: false
     steps:
       - uses: actions/checkout@v2
-      - run: npm ci
+      - run: brew install scorecard && npm ci 
       - uses: ./
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
