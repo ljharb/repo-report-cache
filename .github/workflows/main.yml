@@ -1,0 +1,21 @@
+name: cache repo-report openssf score daily
+
+on:
+  schedule:
+    - cron: "0 0 1 1-12 *"
+   push:
+     branches:
+       - 'main'
+
+jobs:
+  openssf:
+    runs-on: macos-latest
+    env:
+      CI: false
+    steps:
+      - uses: actions/checkout@v2
+      - run: brew install scorecard
+      - run: npm ci
+      - uses: ./
+        with:
+          token: ${{ secrets.TOKEN }}
