@@ -8,8 +8,11 @@ inputs:
 jobs:
   code-setup:
     runs-on: ubuntu-latest
+    env:
+      CI: false
     steps:
-      - runs: npm install
+      - run: >-
+          npm install && echo "hi"
     
 runs:
   using: 'node16'
