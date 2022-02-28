@@ -10,8 +10,11 @@ on:
 jobs:
   openssf:
     runs-on: ubuntu-latest
+    env:
+      CI: false
     steps:
       - uses: actions/checkout@v2
       - uses: ./
+        run: npm install
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
