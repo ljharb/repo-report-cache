@@ -1,0 +1,12 @@
+name: cache repo-report openssf score daily
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+
+jobs:
+  steps:
+      - uses: actions/checkout@v2
+      - uses: Riyabelle25/repo-report-cache@main
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
