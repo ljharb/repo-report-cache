@@ -9,6 +9,7 @@ on:
 
 jobs:
   openssf:
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: Riyabelle25/repo-report-cache@main
