@@ -14,5 +14,3 @@ jobs:
       - uses: Riyabelle25/repo-report-cache@main
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-        run:
-          echo 'Testing!'
