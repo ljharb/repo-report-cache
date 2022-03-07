@@ -3,9 +3,9 @@ name: cache repo-report openssf score daily
 on:
   schedule:
     - cron: "0 0 1 1-12 *"
-   push:
-     branches:
-       - 'main'
+  push:
+    branches:
+      - 'main'
 
 jobs:
   openssf:
