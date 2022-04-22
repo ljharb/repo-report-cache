@@ -51,7 +51,6 @@ const main = async () => {
 			const result = fs.writeFile('metadata-ossf-score.json', json, 'utf8');
 			console.log(result);
 		});
-
 	} catch (error) {
 		core.setFailed(error.message);
 	}
